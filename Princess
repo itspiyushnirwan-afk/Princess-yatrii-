@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princess Yatrii</title>
+<style>
+    body { margin:0; font-family: 'Poppins', sans-serif; }
+    .page { display:none; height:100vh; width:100%; overflow:hidden; }
+    .show { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .btn {
+        margin-top:20px;
+        padding:12px 22px;
+        background:#f6f1e7;
+        color:#000;
+        border:none;
+        border-radius:12px;
+        font-size:1.05rem;
+        cursor:pointer;
+        box-shadow:0 0 6px rgba(0,0,0,0.15);
+        max-width:90%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page show" style="background:#d3d3d3; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:10px; left:10px; font-size:1.8rem; opacity:0.4;">🌼✨🌼</div>
+    <div style="position:absolute; bottom:10px; right:10px; font-size:1.8rem; opacity:0.4;">✨🌼✨</div>
+
+    <h1 style="font-family:'Great Vibes', cursive; font-size:3rem;">hiiiiiiiii!!!! Yatriii!!!</h1>
+    <h2 style="font-family:'Poppins', sans-serif;">Yatriii 🌸✨</h2>
+
+    <button class="btn" style="margin-top:30px; width:90%;" onclick="openPage2()">bauni aurat wahan kyu dekh rahi hai click kar</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page" style="background:linear-gradient(135deg,#ffd6e8,#d6e8ff); position:relative;">
+    <h1 style="font-family:'Great Vibes', cursive; font-size:3rem;">aapkaaa swagat hai princess yatrii</h1>
+    <h3>Happy princess day to my Golu molu 🥰 princess</h3>
+    <div style="font-size:2rem;">💐</div>
+
+    <!-- EXIT BUTTON MOVED DOWN -->
+    <button class="btn" 
+        style="position:absolute; bottom:20px; right:20px; background:#f6f1e7; color:#000; border-radius:10px; padding:8px 14px;"
+        onclick="openPage3()">Exit</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page" style="background:#f7f2e9;">
+    <h2 style="font-family:'Poppins', sans-serif;">Kahan jana hai aapko 😭<br>exit kyu dabaya aapnee<br>Ab katti aapke aur meri !!</h2>
+    <div id="after5"></div>
+</div>
+
+<!-- PAGE 4A -->
+<div id="page4a" class="page" style="background:#fff0f5;">
+    <h1 style="font-family:'Great Vibes', cursive; font-size:3rem;">Thank youuu 🌸✨🎵</h1>
+</div>
+
+<!-- PAGE 4B -->
+<div id="page4b" class="page" style="background:#fff;">
+    <h1 style="font-family:'Poppins';">kattii 😤</h1>
+</div>
+
+<script>
+function flip(from,to){
+    document.getElementById(from).classList.remove('show');
+    document.getElementById(to).classList.add('show');
+}
+
+function openPage2(){ flip('page1','page2'); }
+
+function openPage3(){
+    flip('page2','page3');
+    setTimeout(()=>{
+        document.getElementById('after5').innerHTML =
+        `<p style='margin-top:20px;'>Dhappaaa!! Jk<br>Tu toh meri pyaari dost hai yaar</p>
+        <button class='btn' onclick='openPage4a()'>Pasand aaya!!</button>
+        <button class='btn' onclick='openPage4b()'>Pasand nahi aaya !!</button>`;
+    },5000);
+}
+
+function openPage4a(){ flip('page3','page4a'); }
+
+function openPage4b(){
+    flip('page3','page4b');
+    setTimeout(()=>{
+        document.getElementById('page4b').style.transition='1s';
+        document.getElementById('page4b').style.opacity='0';
+    },3000);
+}
+</script>
+
+</body>
+</html>
